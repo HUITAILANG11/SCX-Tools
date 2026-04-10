@@ -7,12 +7,15 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 
-filename = "scan_survival_urls.txt"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(script_dir, "scan_survival_urls.txt")
+
 if os.path.isfile(filename):
     pass
 else:
     with open(filename,"w",encoding='utf-8') as f:
         pass
+
 path = os.path.dirname(os.path.abspath(__file__)) + "\\scan_survival_urls.txt"
 scan_lock = threading.Lock()
 urled = set()
