@@ -3,7 +3,7 @@ import re
 import os
 import threading
 
-current_dir = os.getcwd()
+current_dir = os.path.dirname(os.path.abspath(__file__))
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
@@ -59,6 +59,7 @@ def scan_subdomain(main_domain, quantity):
                     pass
     except:
         print("\033[31m运行出现错误！请确保项目文件完整！若无法确定请重新下载完整项目\033[0m！")
+        os._exit(1)
 
 def get_submin():
     maindomain = get_maindomain()
