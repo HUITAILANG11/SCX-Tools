@@ -6,11 +6,19 @@ import threading
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
-path = os.getcwd() + "\\scan_survival_urls.txt"
+
+filename = "scan_survival_urls.txt"
+if os.path.isfile(filename):
+    pass
+else:
+    with open(filename,"w",encoding='utf-8') as f:
+        pass
+path = os.path.dirname(os.path.abspath(__file__)) + "\\scan_survival_urls.txt"
 scan_lock = threading.Lock()
 urled = set()
 
 def scan_survival():
+    #print(path)
     try:
         with open(path,"r",encoding='utf-8') as f:
             urls = f.read().splitlines()
@@ -35,6 +43,7 @@ def scan_survival():
                         print(f"[\033[31m*\033[0m] \033[34m{url}\033[0m ——> \033[31m该站点已死亡\033[0m")
     except:
         print("\033[31m路径打开失败！请检查项目文件是否完整！若无法确定请重新下载项目！\033[0m")
+        os._exit(1)
 
 def get_survival():
     print('\033[36m——————————————————————————————开始检测——————————————————————————————\033[0m')
