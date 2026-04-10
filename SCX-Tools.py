@@ -25,7 +25,7 @@ def display_banner():
     print("[\033[34m*\033[0m] \033[35m联系作者：aac666655\033[0m")
     print("[\033[34m*\033[0m] \033[35m小白开发，各方面都有点拉，不好用咱就删了吧，求别骂\033[0m ┗( T﹏T )┛投降")
     print("[\033[34m*\033[0m] \033[35m更新新功能完善各功能ing...\033[0m")
-    print("[\033[34m*\033[0m] \033[35mGitHub:\033[0m")
+    print("[\033[34m*\033[0m] \033[35mGitHub:\033[34mhttps://github.com/HUITAILANG11/SCX-Tools\033[0m")
     print()
 
 def menu():
